@@ -1,26 +1,25 @@
-{
+﻿{
   "name": "antigravity-marketplace",
   "version": "1.0.0",
-  "description": "AndyAWD's Curated Plugins Marketplace for Google Antigravity (AGY)",
+  "description": "AndyAWD's Curated Plugins Marketplace Registry for Google Antigravity (AGY)",
   "type": "module",
   "main": "marketplace.json",
   "scripts": {
-    "build": "node scripts/build-catalog.mjs",
-    "validate": "node scripts/validate.mjs",
-    "sync": "node scripts/sync-submodules.mjs",
-    "install:all": "node scripts/install-all.mjs",
-    "status": "git submodule status"
+    "sync": "node scripts/sync-catalog.mjs",
+    "list": "node scripts/install.mjs --list",
+    "install:all": "node scripts/install.mjs --all"
   },
   "keywords": [
     "antigravity",
     "agy",
     "marketplace",
     "plugins",
+    "registry",
     "gemini",
     "google-antigravity",
-    "mcp",
     "skills",
-    "hooks"
+    "hooks",
+    "mcp"
   ],
   "author": "AndyAWD <anandydy529@gmail.com>",
   "license": "MIT",

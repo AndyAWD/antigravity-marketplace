@@ -1,154 +1,197 @@
-# AndyAWD Google Antigravity 外掛市集（Plugins Marketplace）
+﻿# antigravity-marketplace
 
-繁體中文 | [English](./README.md)
+[English](README.md) | 繁體中文
 
-本儲存庫為 **Google Antigravity（AGY）** 專屬的自建外掛市集聚合中心（Plugins Marketplace Hub）。透過此市集，您可以統一管理、批次驗證、一鍵安裝或以宣告式設定直接引用 AndyAWD 開發的一系列高品質 Antigravity 外掛程式（Plugins）。
+本儲存庫為 **Google Antigravity（AGY）** 專屬的自建外掛市集目錄註冊中心（Pure Catalog Registry Hub）。透過本市集，您可以一覽、檢索並直接安裝 AndyAWD 所開發的 8 款高品質 Antigravity 外掛程式（Plugins）。
 
----
+本市集採用「**純目錄註冊表（Pure Catalog Registry）**」架構，與原廠官方市集機制一致，僅記錄外掛元資料（Metadata）與 GitHub 來源儲存庫位址，無須嵌入任何子模組或原始碼。外掛維護者於各自專案獨立發布版本，免除雙重維護負擔。
 
-## 🌟 收錄外掛總覽（Catalog）
+本市集收錄之所有外掛程式完整支援 Google Antigravity（AGY）三大核心平台：Antigravity 命令列介面（Command-Line Interface / CLI，`agy`）、Antigravity 整合開發環境（Integrated Development Environment / IDE）以及 Antigravity 2.0 桌面應用程式（Desktop Application）。
 
-市集目前精選收錄以下 8 款高生產力外掛程式：
+## 如何安裝
 
-| 外掛名稱 | 最新版本 | 支援組件 | 主要功能說明 | 來源儲存庫 |
-| :--- | :---: | :--- | :--- | :--- |
-| **`antigravity-cli-statusline`** | `v1.8.0` | `skills`, `hooks` | 命令列介面（CLI）狀態列（Statusline / Footer）客製化，即時顯示應用程式介面（API）配額、權杖（Token）消耗、上下文視窗（Context Window）、模型、Git 分支與記憶體用量。 | [GitHub](https://github.com/AndyAWD/antigravity-cli-statusline) |
-| **`antigravity-github-flow`** | `v0.1.0` | `skills` | 輕量化 GitHub Flow 工作流程，支援慣例式提交（Conventional Commits）、拉取請求（Pull Request）雙語說明生成、GitHub Release 發布與文件同步。 | [GitHub](https://github.com/AndyAWD/antigravity-github-flow) |
-| **`antigravity-git-flow`** | `v0.1.0` | `skills` | 標準 Git Flow（main / develop / feature / release / hotfix）分支策略自動化管理與慣例式提交。 | [GitHub](https://github.com/AndyAWD/antigravity-git-flow) |
-| **`antigravity-google-drive`** | `v0.1.0` | `skills`, `mcpServers`, `rules` | Google 雲端硬碟（Google Drive）唯讀存取外掛，支援跨檔案搜尋、閱讀，並自動將 Google 文件與試算表匯出為純文字與 Markdown。 | [GitHub](https://github.com/AndyAWD/antigravity-google-drive) |
-| **`antigravity-state`** | `v0.1.0` | `skills`, `hooks` | 長程多步驟任務狀態管理，透過專案根目錄的 `STATE.md` 跨對話會話持續追蹤子目標與里程碑進度。 | [GitHub](https://github.com/AndyAWD/antigravity-state) |
-| **`antigravity-chinese-copywriting`** | `v1.0.0` | `skills`, `rules` | 中文文案排版規範（遵循 sparanoid 規範），自動於中英文與數字之間插入空格、校正全形標點符號與專有名詞大小寫。 | [GitHub](https://github.com/AndyAWD/antigravity-chinese-copywriting) |
-| **`antigravity-help-agent`** | `v1.1.0` | `skills`, `agents` | Google Antigravity 原廠知識庫與生態系問答助理，涵蓋 CLI、IDE、Desktop、Python SDK 與各項客製化機制。 | [GitHub](https://github.com/AndyAWD/antigravity-help-agent) |
-| **`antigravity-doc-template`** | `v1.0.0` | `skills`, `templates` | 外掛標準說明文件範本庫與生成器，內建 README 雙語範本、PR 範本、Release 範本與自動化同步技能。 | [GitHub](https://github.com/AndyAWD/antigravity-doc-template) |
-
----
-
-## 🚀 快速安裝與使用方式
-
-本市集支援多種整合途徑，您可以根據個人或團隊需求選擇最適合的方式：
-
-### 方式 1：宣告式繼承（零複製引用，最推薦 ⭐️）
-
-Antigravity 內建標準宣告式客製化機制。您只需將本市集的 `plugins.json` 加入至您的全域設定檔，即可在毋須複製檔案的情況下即時啟用所有外掛：
-
-執行市集內建的自動註冊腳本：
-```bash
-node scripts/install-all.mjs --inherit
-```
-
-或者手動編輯您的全域外掛設定檔 `~/.gemini/config/plugins.json`（若無此檔案可自行建立）：
-```json
-{
-  "inherits": [
-    {
-      "path": "D:/Project/antigravity-marketplace/plugins.json"
-    }
-  ]
-}
-```
-
-> [!TIP]
-> 採用宣告式繼承時，當市集更新或切換分支時，所有專案會即刻自動套用最新外掛，不佔用額外磁碟空間！
-
----
-
-### 方式 2：一鍵批次安裝到本地環境
-
-若您習慣將外掛實體匯入至 Antigravity 原廠外掛目錄（`~/.gemini/config/plugins/`）並註冊至 `import_manifest.json`：
+您可以透過 Antigravity 原廠命令列介面直接安裝本市集收錄的任一外掛程式：
 
 ```bash
-# 一鍵安裝市集內的所有外掛
+agy plugin install https://github.com/AndyAWD/<plugin-name>
+```
+
+例如安裝命令列狀態列客製化外掛：
+
+```bash
+agy plugin install https://github.com/AndyAWD/antigravity-cli-statusline
+```
+
+若您需要一次性安裝本市集收錄的全數 8 款外掛程式，可在複製本儲存庫後執行：
+
+```bash
 npm run install:all
-
-# 或是安裝單一特定外掛（例如僅安裝 Google Drive 外掛）
-node scripts/install-all.mjs antigravity-google-drive
 ```
 
-安裝完成後，可執行以下指令檢查已匯入之外掛狀態：
-```bash
-agy plugin list
-```
+## 特色亮點
 
----
+1. **跨三大平台無縫相容**：收錄之所有技能、規則與生命週期掛鉤（Lifecycle Hooks）全面相容於 CLI 終端機、IDE 側邊欄與 2.0 桌面版。
+2. **純目錄零維護負擔**：採無實體原始碼之註冊表設計，外掛各自獨立開發與發布，徹底消除 Git 子模組雙重維護成本。
+3. **收錄 8 款高生產力外掛**：涵蓋 CLI 狀態列客製化、雙套 Git 流程、Google 雲端硬碟整合、長程任務狀態追蹤、中文排版規範校驗、原廠知識庫助理與說明文件範本庫。
+4. **100% 原廠規格合規檢驗**：全數外掛皆通過 `agy plugin validate` 官方驗證標準，確保穩定無衝突。
+5. **原廠 CLI 隨插即用**：毋須額外設定套件管理器，直接透過原廠 `agy plugin install` 指令即可隨選即裝。
 
-### 方式 3：在特定專案中局部使用（Project-level）
+## 如何管理與切換外掛程式
 
-若您只想在特定專案中啟用本市集的外掛，只需在該專案根目錄下的 `.agents/plugins.json` 加入繼承設定：
+• 列出已安裝外掛：
 
-```json
-{
-  "inherits": [
-    {
-      "path": "/absolute/path/to/antigravity-marketplace/plugins.json"
-    }
-  ]
-}
-```
+  ```bash
+  agy plugin list
+  ```
 
----
+• 安裝外掛程式：
 
-## 🛠 自動化管理指令
+  ```bash
+  agy plugin install <plugin-url>
+  ```
 
-市集內建完整的 Node.js 管理工具鏈，方便維護者與使用者進行版本控制：
+• 啟用外掛程式：
 
-| npm 指令 | 對應動作 | 說明 |
-| :--- | :--- | :--- |
-| `npm run validate` | `node scripts/validate.mjs` | 調用 `agy plugin validate` 批次驗證所有外掛的合規性與完整度。 |
-| `npm run sync` | `node scripts/sync-submodules.mjs` | 遞迴拉取所有子模組（Submodules）遠端最新提交（Commits），並自動重新產生目錄。 |
-| `npm run build` | `node scripts/build-catalog.mjs` | 重新掃描 `plugins/` 目錄，動態產生最新的 `marketplace.json` 與 `plugins.json`。 |
-| `npm run install:all`| `node scripts/install-all.mjs` | 透過原廠 `agy plugin install` 指令批次安裝市集所有外掛至本機環境。 |
-| `npm run status` | `git submodule status` | 檢視各個外掛子模組目前的版本標記與提交識別碼（Commit SHA）。 |
+  ```bash
+  agy plugin enable <plugin-name>
+  ```
 
----
+• 停用外掛程式：
 
-## 📁 市集專案目錄架構
+  ```bash
+  agy plugin disable <plugin-name>
+  ```
+
+• 移除外掛程式：
+
+  ```bash
+  agy plugin uninstall <plugin-name>
+  ```
+
+## 專案資料夾目錄
 
 ```text
 antigravity-marketplace/
-├── .gitmodules                     # Git 子模組設定檔（追蹤 8 個外掛儲存庫）
-├── marketplace.json                # 官方市集相容清單（Marketplace Catalog Manifest）
-├── plugins.json                    # Antigravity 宣告式外掛清單（支援 inherits 繼承）
-├── package.json                    # 管理腳本與自動化指令設定
-├── scripts/                        # 市集自動化工具鏈
-│   ├── build-catalog.mjs           # 自動掃描外掛並產生 marketplace.json / plugins.json
-│   ├── install-all.mjs             # 一鍵安裝或宣告式註冊腳本
-│   ├── sync-submodules.mjs         # 子模組同步腳本
-│   └── validate.mjs                # 原廠指令批次合規性驗證腳本
-├── plugins/                        # 外掛集合（Git Submodules）
-│   ├── antigravity-cli-statusline/
-│   ├── antigravity-git-flow/
-│   ├── antigravity-github-flow/
-│   ├── antigravity-google-drive/
-│   ├── antigravity-state/
-│   ├── antigravity-chinese-copywriting/
-│   ├── antigravity-help-agent/
-│   └── antigravity-doc-template/
-├── README.md                       # 英文說明文件
-└── README.zh-TW.md                 # 繁體中文說明文件
+├── marketplace.json
+├── package.json
+├── LICENSE
+├── README.md
+├── README.zh-TW.md
+└── scripts/
+    ├── install.mjs
+    └── sync-catalog.mjs
 ```
 
+## 指令功能說明
+
+本市集收錄之 8 款外掛目錄總覽與核心斜線指令（Slash Commands）說明如下：
+
+### 1. 市集收錄外掛目錄總覽
+
+| 外掛名稱 | 最新版本 | 核心功能說明 | 原廠安裝指令 |
+| :--- | :---: | :--- | :--- |
+| **`antigravity-cli-statusline`** | `v1.8.0` | CLI 頁尾狀態列客製化，即時顯示配額、權杖、模型與 Git 分支。 | `agy plugin install https://github.com/AndyAWD/antigravity-cli-statusline` |
+| **`antigravity-github-flow`** | `v0.1.0` | 輕量化 GitHub Flow，支援慣例式提交、PR 雙語說明與 Release 生成。 | `agy plugin install https://github.com/AndyAWD/antigravity-github-flow` |
+| **`antigravity-git-flow`** | `v0.1.0` | 標準 Git Flow 分支策略自動化與慣例式提交。 | `agy plugin install https://github.com/AndyAWD/antigravity-git-flow` |
+| **`antigravity-google-drive`** | `v0.1.0` | Google 雲端硬碟唯讀存取，支援檔案搜尋並自動匯出為 Markdown。 | `agy plugin install https://github.com/AndyAWD/antigravity-google-drive` |
+| **`antigravity-state`** | `v0.1.0` | 長程任務狀態管理，透過 `STATE.md` 跨會話持續追蹤目標。 | `agy plugin install https://github.com/AndyAWD/antigravity-state` |
+| **`antigravity-chinese-copywriting`** | `v1.0.0` | 中文文案排版規範校正（中英文與數字間空格、全形標點符號）。 | `agy plugin install https://github.com/AndyAWD/antigravity-chinese-copywriting` |
+| **`antigravity-help-agent`** | `v1.1.0` | Google Antigravity 原廠知識庫與全生態系問答助理。 | `agy plugin install https://github.com/AndyAWD/antigravity-help-agent` |
+| **`antigravity-doc-template`** | `v1.0.0` | 外掛標準說明文件範本庫與生成器（內建雙語 README/PR 範本）。 | `agy plugin install https://github.com/AndyAWD/antigravity-doc-template` |
+
+### 2. 狀態列客製化
+
+```text
+/antigravity-cli-statusline:agy-cli-statusline
+```
+
+- **使用情境**：設定 Antigravity 命令列介面（CLI）頁尾狀態列顯示指標、順序與語系（繁中/簡中/英文/日文）。
+- **運作流程**：
+  1. 透過互動式表單選擇要顯示的指標（API 配額、權杖消耗、模型名稱、Git 分支、RAM 等）。
+  2. 自動部署跨平台 Node.js 生命週期掛鉤（Hooks）並完成設定註冊。
+
+### 3. 慣例式提交與 GitHub Flow
+
+```text
+/antigravity-github-flow:commit
+```
+
+- **使用情境**：整理目前工作區變更並自動生成符合慣例式提交規範（Conventional Commits）的 Commit。
+- **運作流程**：
+  1. 分析工作區暫存與未暫存變更。
+  2. 自動推斷變更意圖與範圍（Scope），若有多個獨立任務自動拆分。
+  3. 產生標準 Commit 訊息並附帶官方協作者簽章。
+
+### 4. 拉取請求雙語說明生成
+
+```text
+/antigravity-github-flow:github-pr
+```
+
+- **使用情境**：為 GitHub 發起拉取請求（Pull Request）時自動撰寫結構化說明。
+- **運作流程**：
+  1. 詢問使用者偏好語言（繁體中文、英文或中英對照）。
+  2. 比對分支與 main 的提交歷史與異動摘要。
+  3. 自動套用標準 PR 範本產出標題與內文，並支援調用 GitHub CLI 直接建立。
+
+### 5. 長程任務狀態管理
+
+```text
+/antigravity-state:agy-state
+```
+
+- **使用情境**：執行多步驟複雜任務、切換模型或跨對話重設前儲存當前工作進度。
+- **運作流程**：
+  1. 檢視專案目標、進行中子目標與已完成項目。
+  2. 將里程碑狀態與下一步計畫寫入專案根目錄之 `STATE.md`。
+
+### 6. Google 雲端硬碟唯讀檢索
+
+```text
+/antigravity-google-drive:agy-google-drive
+```
+
+- **使用情境**：需要安全讀取、檢索 Google 雲端硬碟共用資料夾內的檔案時。
+- **運作流程**：
+  1. 透過 Google Cloud 服務帳戶連線至指定共用雲端資料夾。
+  2. 搜尋相關檔案並自動將 Google 文件或試算表轉換為 Markdown 檢視。
+
+### 7. 中文文案排版規範校正
+
+```text
+/antigravity-chinese-copywriting:agy-chinese-copywriting
+```
+
+- **使用情境**：校對繁體中文文件（`.md`、`.txt`），確保排版嚴謹美觀。
+- **運作流程**：
+  1. 套用 sparanoid 排版準則，於中英文與數字之間補足半形空格。
+  2. 修正半形中文標點符號為全形，並校正專有名詞大小寫。
+
+### 8. Google Antigravity 原廠知識庫問答
+
+```text
+/antigravity-help:agy-help
+```
+
+- **使用情境**：查詢 Antigravity 全生態系規格、外掛體系、MCP 整合或故障排除。
+- **運作流程**：
+  1. 啟動官方知識庫審計助理。
+  2. 基於正向實證三軌協議檢索本機手冊與官方規範提供精準解答。
+
 ---
 
-## 🤝 貢獻與新增外掛
+### 🛠 維護者指南（Maintainer Guide）
 
-若要向本市集新增外掛：
+本儲存庫維護者可使用以下工具自動維持市集目錄為最新狀態：
 
-1. 以 Git 子模組形式將外掛加入 `plugins/` 目錄：
-   ```bash
-   git submodule add <repository-url> plugins/<plugin-name>
-   ```
-2. 執行目錄重建腳本：
-   ```bash
-   npm run build
-   ```
-3. 執行合規性驗證：
-   ```bash
-   npm run validate
-   ```
-4. 提交並發起拉取請求（Pull Request）。
+• 同步遠端 GitHub 最新版號與資訊清單：
 
----
+  ```bash
+  npm run sync
+  ```
 
-## 📄 授權條款（License）
+  腳本會自動並行向 8 款外掛之 GitHub 儲存庫抓取最新版號與描述，並重新產出 `marketplace.json`。
 
-本市集框架以 [MIT License](./LICENSE) 授權釋出。各外掛之授權條款請參閱其個別子目錄中的標註。
+## 授權條款
+
+本市集以 [MIT License](LICENSE) 授權釋出。各外掛程式之詳細授權條款請參閱其個別 GitHub 儲存庫中的標註。

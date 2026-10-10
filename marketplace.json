@@ -1,13 +1,88 @@
 {
   "name": "andyawd-marketplace",
   "displayName": "AndyAWD's Antigravity Plugins Marketplace",
-  "description": "Curated collection of high-productivity Google Antigravity (AGY) plugins, skills, hooks, and MCP servers.",
+  "description": "Curated pure catalog registry of Google Antigravity (AGY) plugins by AndyAWD.",
   "version": "1.0.0",
   "homepage": "https://github.com/AndyAWD/antigravity-marketplace",
   "repository": "https://github.com/AndyAWD/antigravity-marketplace.git",
-  "updatedAt": "2026-10-10T11:26:53.464Z",
+  "updatedAt": "2026-10-10T11:59:54.409Z",
   "pluginCount": 8,
   "plugins": [
+    {
+      "name": "antigravity-cli-statusline",
+      "displayName": "antigravity-cli-statusline",
+      "version": "1.8.0",
+      "description": "Customize the Antigravity CLI statusline (footer) with quota, token, context, model, git branch and more across macOS / Linux / Windows.",
+      "author": "andyawd",
+      "license": "MIT",
+      "repository": "https://github.com/AndyAWD/antigravity-cli-statusline",
+      "keywords": [
+        "antigravity",
+        "plugin"
+      ],
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-cli-statusline"
+    },
+    {
+      "name": "antigravity-git-flow",
+      "displayName": "antigravity-git-flow",
+      "version": "0.1.0",
+      "description": "Antigravity plugin for generating Conventional Commits with Git Flow branching.",
+      "author": "AndyAWD <anandydy529@gmail.com>",
+      "license": "MIT",
+      "repository": "https://github.com/AndyAWD/antigravity-git-flow",
+      "keywords": [
+        "antigravity",
+        "plugin"
+      ],
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-git-flow"
+    },
+    {
+      "name": "antigravity-github-flow",
+      "displayName": "antigravity-github-flow",
+      "version": "0.1.0",
+      "description": "Antigravity plugin for Conventional Commits and lightweight GitHub Flow branching.",
+      "author": "AndyAWD <anandydy529@gmail.com>",
+      "license": "MIT",
+      "repository": "https://github.com/AndyAWD/antigravity-github-flow",
+      "keywords": [
+        "antigravity",
+        "plugin"
+      ],
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-github-flow"
+    },
+    {
+      "name": "antigravity-google-drive",
+      "displayName": "Google Drive Integration",
+      "version": "0.1.0",
+      "description": "Google Drive 雲端硬碟整合外掛程式，透過 Google Cloud 服務帳戶唯讀存取指定共用資料夾，支援搜尋、目錄瀏覽與自動將 Google 文件轉換為 Markdown/純文字檢視。",
+      "author": "AndyAWD",
+      "license": "MIT",
+      "repository": "https://github.com/AndyAWD/antigravity-google-drive",
+      "keywords": [
+        "antigravity",
+        "plugin"
+      ],
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-google-drive",
+      "suggestedPrompts": [
+        "請搜尋 Google 雲端硬碟中的相關檔案",
+        "列出 Google 雲端硬碟共用資料夾內的所有檔案與目錄",
+        "讀取並摘要 Google 雲端硬碟中的指定文件內容"
+      ]
+    },
+    {
+      "name": "antigravity-state",
+      "displayName": "antigravity-state",
+      "version": "0.1.0",
+      "description": "Google Antigravity plugin for STATE.md long-horizon task state management.",
+      "author": "AndyAWD",
+      "license": "MIT",
+      "repository": "https://github.com/AndyAWD/antigravity-state",
+      "keywords": [
+        "antigravity",
+        "plugin"
+      ],
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-state"
+    },
     {
       "name": "antigravity-chinese-copywriting",
       "displayName": "antigravity-chinese-copywriting",
@@ -15,10 +90,7 @@
       "description": "Antigravity plugin for Chinese Copywriting Guidelines (sparanoid/chinese-copywriting-guidelines) - auto-spacing, full-width punctuation, and proper-noun casing across Antigravity CLI (agy), IDE, and Antigravity 2.0 (Desktop).",
       "author": "AndyAWD <anandydy529@gmail.com>",
       "license": "MIT",
-      "repository": "https://github.com/AndyAWD/chinese-copywriting-agy",
-      "components": [
-        "skills"
-      ],
+      "repository": "https://github.com/AndyAWD/antigravity-chinese-copywriting",
       "keywords": [
         "antigravity",
         "agy",
@@ -35,32 +107,25 @@
         "pangu",
         "style-guide"
       ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/chinese-copywriting-agy.git",
-        "path": "plugins/antigravity-chinese-copywriting"
-      }
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-chinese-copywriting"
     },
     {
-      "name": "antigravity-cli-statusline",
-      "displayName": "antigravity-cli-statusline",
-      "version": "1.8.0",
-      "description": "Customize the Antigravity CLI statusline (footer) with quota, token, context, model, git branch and more across macOS / Linux / Windows.",
+      "name": "antigravity-help",
+      "displayName": "antigravity-help",
+      "version": "1.1.0",
+      "description": "Comprehensive knowledge base and help assistant for the entire Google Antigravity ecosystem (including Antigravity CLI, Antigravity IDE, Antigravity 2.0 Desktop, and Antigravity Python SDK) and Customization System (Skills, Rules, Plugins, Hooks, MCP).",
       "author": "andyawd",
       "license": "MIT",
-      "repository": "https://github.com/AndyAWD/antigravity-cli-statusline",
-      "components": [
-        "skills"
-      ],
+      "repository": "https://github.com/AndyAWD/antigravity-help-agent",
       "keywords": [
         "antigravity",
-        "plugin"
+        "agy",
+        "assistant",
+        "documentation",
+        "skills",
+        "agents"
       ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/antigravity-cli-statusline.git",
-        "path": "plugins/antigravity-cli-statusline"
-      }
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-help-agent"
     },
     {
       "name": "antigravity-doc-template",
@@ -70,136 +135,11 @@
       "author": "Google Antigravity",
       "license": "MIT",
       "repository": "https://github.com/AndyAWD/antigravity-doc-template",
-      "components": [
-        "skills"
-      ],
       "keywords": [
         "antigravity",
         "plugin"
       ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/antigravity-doc-template.git",
-        "path": "plugins/antigravity-doc-template"
-      }
-    },
-    {
-      "name": "antigravity-git-flow",
-      "displayName": "antigravity-git-flow",
-      "version": "0.1.0",
-      "description": "Antigravity plugin for generating Conventional Commits with Git Flow branching.",
-      "author": "AndyAWD <anandydy529@gmail.com>",
-      "license": "MIT",
-      "repository": "https://github.com/AndyAWD/antigravity-git-flow",
-      "components": [
-        "skills"
-      ],
-      "keywords": [
-        "antigravity",
-        "plugin"
-      ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/antigravity-git-flow.git",
-        "path": "plugins/antigravity-git-flow"
-      }
-    },
-    {
-      "name": "antigravity-github-flow",
-      "displayName": "antigravity-github-flow",
-      "version": "0.1.0",
-      "description": "Antigravity plugin for Conventional Commits and lightweight GitHub Flow branching.",
-      "author": "AndyAWD <anandydy529@gmail.com>",
-      "license": "MIT",
-      "repository": "https://github.com/AndyAWD/antigravity-github-flow",
-      "components": [
-        "skills"
-      ],
-      "keywords": [
-        "antigravity",
-        "plugin"
-      ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/antigravity-github-flow.git",
-        "path": "plugins/antigravity-github-flow"
-      }
-    },
-    {
-      "name": "antigravity-google-drive",
-      "displayName": "Google Drive Integration",
-      "version": "0.1.0",
-      "description": "Google Drive 雲端硬碟整合外掛程式，透過 Google Cloud 服務帳戶唯讀存取指定共用資料夾，支援搜尋、目錄瀏覽與自動將 Google 文件轉換為 Markdown/純文字檢視。",
-      "author": "AndyAWD",
-      "license": "MIT",
-      "repository": "https://github.com/AndyAWD/antigravity-google-drive",
-      "components": [
-        "skills",
-        "mcpServers",
-        "rules"
-      ],
-      "keywords": [
-        "antigravity",
-        "plugin"
-      ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/antigravity-google-drive.git",
-        "path": "plugins/antigravity-google-drive"
-      },
-      "suggestedPrompts": [
-        "請搜尋 Google 雲端硬碟中的相關檔案",
-        "列出 Google 雲端硬碟共用資料夾內的所有檔案與目錄",
-        "讀取並摘要 Google 雲端硬碟中的指定文件內容"
-      ]
-    },
-    {
-      "name": "antigravity-help",
-      "displayName": "antigravity-help-agent",
-      "version": "1.1.0",
-      "description": "Comprehensive knowledge base and help assistant for the entire Google Antigravity ecosystem (including Antigravity CLI, Antigravity IDE, Antigravity 2.0 Desktop, and Antigravity Python SDK) and Customization System (Skills, Rules, Plugins, Hooks, MCP).",
-      "author": "andyawd",
-      "license": "MIT",
-      "repository": "https://github.com/andyawd/antigravity-help-agent",
-      "components": [
-        "skills",
-        "agents"
-      ],
-      "keywords": [
-        "antigravity",
-        "agy",
-        "assistant",
-        "documentation",
-        "skills",
-        "agents"
-      ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/andyawd/antigravity-help-agent.git",
-        "path": "plugins/antigravity-help-agent"
-      }
-    },
-    {
-      "name": "antigravity-state",
-      "displayName": "antigravity-state",
-      "version": "0.1.0",
-      "description": "Google Antigravity plugin for STATE.md long-horizon task state management.",
-      "author": "AndyAWD",
-      "license": "MIT",
-      "repository": "https://github.com/AndyAWD/antigravity-state",
-      "components": [
-        "skills",
-        "hooks"
-      ],
-      "keywords": [
-        "antigravity",
-        "plugin"
-      ],
-      "source": {
-        "type": "git",
-        "url": "https://github.com/AndyAWD/antigravity-state.git",
-        "path": "plugins/antigravity-state"
-      }
+      "installCommand": "agy plugin install https://github.com/AndyAWD/antigravity-doc-template"
     }
   ]
 }
