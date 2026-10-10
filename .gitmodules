@@ -1,0 +1,24 @@
+[submodule "plugins/antigravity-cli-statusline"]
+	path = plugins/antigravity-cli-statusline
+	url = https://github.com/AndyAWD/antigravity-cli-statusline.git
+[submodule "plugins/antigravity-git-flow"]
+	path = plugins/antigravity-git-flow
+	url = https://github.com/AndyAWD/antigravity-git-flow.git
+[submodule "plugins/antigravity-github-flow"]
+	path = plugins/antigravity-github-flow
+	url = https://github.com/AndyAWD/antigravity-github-flow.git
+[submodule "plugins/antigravity-google-drive"]
+	path = plugins/antigravity-google-drive
+	url = https://github.com/AndyAWD/antigravity-google-drive.git
+[submodule "plugins/antigravity-state"]
+	path = plugins/antigravity-state
+	url = https://github.com/AndyAWD/antigravity-state.git
+[submodule "plugins/antigravity-chinese-copywriting"]
+	path = plugins/antigravity-chinese-copywriting
+	url = https://github.com/AndyAWD/antigravity-chinese-copywriting.git
+[submodule "plugins/antigravity-help-agent"]
+	path = plugins/antigravity-help-agent
+	url = https://github.com/AndyAWD/antigravity-help-agent.git
+[submodule "plugins/antigravity-doc-template"]
+	path = plugins/antigravity-doc-template
+	url = https://github.com/AndyAWD/antigravity-doc-template.git

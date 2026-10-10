@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/antigravity-plugins.json",
+  "entries": [
+    {
+      "path": "plugins/antigravity-chinese-copywriting"
+    },
+    {
+      "path": "plugins/antigravity-cli-statusline"
+    },
+    {
+      "path": "plugins/antigravity-doc-template"
+    },
+    {
+      "path": "plugins/antigravity-git-flow"
+    },
+    {
+      "path": "plugins/antigravity-github-flow"
+    },
+    {
+      "path": "plugins/antigravity-google-drive"
+    },
+    {
+      "path": "plugins/antigravity-help-agent"
+    },
+    {
+      "path": "plugins/antigravity-state"
+    }
+  ]
+}
